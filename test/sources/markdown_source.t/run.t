@@ -31,7 +31,7 @@ Generate markdown source documentation:
 Check that markdown files were generated:
 
   $ find markdown -name "*.md" | sort
-  markdown/Simple_test.md
+  markdown/Simple_test/index.md
   markdown/src/simple_test.ml.md
 
 Check the generated markdown source file:

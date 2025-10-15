@@ -41,6 +41,7 @@ let markdown_target_rule path =
   [
     "odoc";
     "markdown-generate";
+    "--flat";
     "-o";
     ".";
     "--extra-suffix";
@@ -114,7 +115,7 @@ let () =
         (html_target_rule, Fpath.v "html", Some "--flat");
         (latex_target_rule, Fpath.v "latex", None);
         (man_target_rule, Fpath.v "man", None);
-        (markdown_target_rule, Fpath.v "markdown", None);
+        (markdown_target_rule, Fpath.v "markdown", Some "--flat");
       ]
       cases
   in

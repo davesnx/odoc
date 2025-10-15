@@ -30,7 +30,7 @@
   $ odoc markdown-generate page-page.odocl -o markdown
   $ odoc markdown-generate list.odocl -o markdown
 
-  $ cat markdown/test/Test.md
+  $ cat markdown/test/Test/index.md
   
   # Module `Test`
   
@@ -60,7 +60,7 @@
   module type T = sig ... end
   ```
 
-  $ cat markdown/test/Test-module-type-X.md
+  $ cat markdown/test/Test/module-type-X/index.md
   
   # Module type `Test.X`
   
@@ -68,7 +68,7 @@
   type t = int
   ```
 
-  $ cat markdown/test/Test-module-type-T.md
+  $ cat markdown/test/Test/module-type-T/index.md
   
   # Module type `Test.T`
   
@@ -76,7 +76,7 @@
   type t = int
   ```
 
-  $ cat markdown/test/Test-List.md
+  $ cat markdown/test/Test/List/index.md
   
   # Module `Test.List`
   
@@ -124,9 +124,9 @@
   
   #### References
   
-  See an empty reference [`Test.v`](./Test.md#val-v).
+  See an empty reference [`Test.v`](./Test/index.md#val-v).
   
-  See [this function from another library](./Test.md#val-v).
+  See [this function from another library](./Test/index.md#val-v).
   
   See `this page from another package`.
   
@@ -135,7 +135,7 @@
   
   ##### Subpages
   
-  There's a subpage here [`Test`](./Test.md) and another one [`Test2`](./Test2.md)
+  There's a subpage here [`Test`](./Test/index.md) and another one [`Test2`](./Test2/index.md)
   
   
   #### Lists

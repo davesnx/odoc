@@ -946,6 +946,7 @@
    (run
     odoc
     markdown-generate
+    --flat
     -o
     .
     --extra-suffix
@@ -976,7 +977,7 @@
   (action
    (with-outputs-to
     alerts.targets.gen
-    (run odoc markdown-targets -o . %{dep:../alerts.odocl})))
+    (run odoc markdown-targets -o . %{dep:../alerts.odocl} --flat)))
   (enabled_if
    (>= %{ocaml_version} 4.04)))
  (rule
@@ -1131,7 +1132,15 @@
   (targets Alias.md.gen Alias-X.md.gen)
   (package odoc)
   (action
-   (run odoc markdown-generate -o . --extra-suffix gen %{dep:../alias.odocl}))
+   (run
+    odoc
+    markdown-generate
+    --flat
+    -o
+    .
+    --extra-suffix
+    gen
+    %{dep:../alias.odocl}))
   (enabled_if
    (>= %{ocaml_version} 4.04)))
  (rule
@@ -1157,7 +1166,7 @@
   (action
    (with-outputs-to
     alias.targets.gen
-    (run odoc markdown-targets -o . %{dep:../alias.odocl})))
+    (run odoc markdown-targets -o . %{dep:../alias.odocl} --flat)))
   (enabled_if
    (>= %{ocaml_version} 4.04)))
  (rule
@@ -1291,7 +1300,15 @@
   (targets Bugs.md.gen)
   (package odoc)
   (action
-   (run odoc markdown-generate -o . --extra-suffix gen %{dep:../bugs.odocl}))
+   (run
+    odoc
+    markdown-generate
+    --flat
+    -o
+    .
+    --extra-suffix
+    gen
+    %{dep:../bugs.odocl}))
   (enabled_if
    (>= %{ocaml_version} 4.04)))
  (rule
@@ -1310,7 +1327,7 @@
   (action
    (with-outputs-to
     bugs.targets.gen
-    (run odoc markdown-targets -o . %{dep:../bugs.odocl})))
+    (run odoc markdown-targets -o . %{dep:../bugs.odocl} --flat)))
   (enabled_if
    (>= %{ocaml_version} 4.04)))
  (rule
@@ -1501,6 +1518,7 @@
    (run
     odoc
     markdown-generate
+    --flat
     -o
     .
     --extra-suffix
@@ -1542,7 +1560,7 @@
   (action
    (with-outputs-to
     bugs_post_406.targets.gen
-    (run odoc markdown-targets -o . %{dep:../bugs_post_406.odocl})))
+    (run odoc markdown-targets -o . %{dep:../bugs_post_406.odocl} --flat)))
   (enabled_if
    (>= %{ocaml_version} 4.06)))
  (rule
@@ -1693,6 +1711,7 @@
    (run
     odoc
     markdown-generate
+    --flat
     -o
     .
     --extra-suffix
@@ -1716,7 +1735,7 @@
   (action
    (with-outputs-to
     bugs_pre_410.targets.gen
-    (run odoc markdown-targets -o . %{dep:../bugs_pre_410.odocl})))
+    (run odoc markdown-targets -o . %{dep:../bugs_pre_410.odocl} --flat)))
   (enabled_if
    (<= %{ocaml_version} 4.09)))
  (rule
@@ -2003,7 +2022,15 @@
    Class-class-polymorphic'.md.gen)
   (package odoc)
   (action
-   (run odoc markdown-generate -o . --extra-suffix gen %{dep:../class.odocl}))
+   (run
+    odoc
+    markdown-generate
+    --flat
+    -o
+    .
+    --extra-suffix
+    gen
+    %{dep:../class.odocl}))
   (enabled_if
    (>= %{ocaml_version} 4.04)))
  (rule
@@ -2087,7 +2114,7 @@
   (action
    (with-outputs-to
     class.targets.gen
-    (run odoc markdown-targets -o . %{dep:../class.odocl})))
+    (run odoc markdown-targets -o . %{dep:../class.odocl} --flat)))
   (enabled_if
    (>= %{ocaml_version} 4.04)))
  (rule
@@ -2292,6 +2319,7 @@
    (run
     odoc
     markdown-generate
+    --flat
     -o
     .
     --extra-suffix
@@ -2329,7 +2357,7 @@
   (action
    (with-outputs-to
     class_comments.targets.gen
-    (run odoc markdown-targets -o . %{dep:../class_comments.odocl})))
+    (run odoc markdown-targets -o . %{dep:../class_comments.odocl} --flat)))
   (enabled_if
    (>= %{ocaml_version} 4.08)))
  (rule
@@ -2466,6 +2494,7 @@
    (run
     odoc
     markdown-generate
+    --flat
     -o
     .
     --extra-suffix
@@ -2489,7 +2518,7 @@
   (action
    (with-outputs-to
     external.targets.gen
-    (run odoc markdown-targets -o . %{dep:../external.odocl})))
+    (run odoc markdown-targets -o . %{dep:../external.odocl} --flat)))
   (enabled_if
    (>= %{ocaml_version} 4.04)))
  (rule
@@ -2820,6 +2849,7 @@
    (run
     odoc
     markdown-generate
+    --flat
     -o
     .
     --extra-suffix
@@ -2929,7 +2959,7 @@
   (action
    (with-outputs-to
     functor.targets.gen
-    (run odoc markdown-targets -o . %{dep:../functor.odocl})))
+    (run odoc markdown-targets -o . %{dep:../functor.odocl} --flat)))
   (enabled_if
    (>= %{ocaml_version} 4.04)))
  (rule
@@ -3149,6 +3179,7 @@
    (run
     odoc
     markdown-generate
+    --flat
     -o
     .
     --extra-suffix
@@ -3225,7 +3256,7 @@
   (action
    (with-outputs-to
     functor2.targets.gen
-    (run odoc markdown-targets -o . %{dep:../functor2.odocl})))
+    (run odoc markdown-targets -o . %{dep:../functor2.odocl} --flat)))
   (enabled_if
    (>= %{ocaml_version} 4.04)))
  (rule
@@ -3421,6 +3452,7 @@
    (run
     odoc
     markdown-generate
+    --flat
     -o
     .
     --extra-suffix
@@ -3465,7 +3497,7 @@
   (action
    (with-outputs-to
     functor_ml.targets.gen
-    (run odoc markdown-targets -o . %{dep:../functor_ml.odocl})))
+    (run odoc markdown-targets -o . %{dep:../functor_ml.odocl} --flat)))
   (enabled_if
    (>= %{ocaml_version} 4.14)))
  (rule
@@ -3670,6 +3702,7 @@
    (run
     odoc
     markdown-generate
+    --flat
     -o
     .
     --extra-suffix
@@ -3745,7 +3778,7 @@
   (action
    (with-outputs-to
     include.targets.gen
-    (run odoc markdown-targets -o . %{dep:../include.odocl})))
+    (run odoc markdown-targets -o . %{dep:../include.odocl} --flat)))
   (enabled_if
    (>= %{ocaml_version} 4.04)))
  (rule
@@ -3955,6 +3988,7 @@
    (run
     odoc
     markdown-generate
+    --flat
     -o
     .
     --extra-suffix
@@ -4006,7 +4040,7 @@
   (action
    (with-outputs-to
     include2.targets.gen
-    (run odoc markdown-targets -o . %{dep:../include2.odocl})))
+    (run odoc markdown-targets -o . %{dep:../include2.odocl} --flat)))
   (enabled_if
    (>= %{ocaml_version} 4.04)))
  (rule
@@ -4170,6 +4204,7 @@
    (run
     odoc
     markdown-generate
+    --flat
     -o
     .
     --extra-suffix
@@ -4202,7 +4237,7 @@
   (action
    (with-outputs-to
     include_sections.targets.gen
-    (run odoc markdown-targets -o . %{dep:../include_sections.odocl})))
+    (run odoc markdown-targets -o . %{dep:../include_sections.odocl} --flat)))
   (enabled_if
    (>= %{ocaml_version} 4.04)))
  (rule
@@ -4346,6 +4381,7 @@
    (run
     odoc
     markdown-generate
+    --flat
     -o
     .
     --extra-suffix
@@ -4369,7 +4405,7 @@
   (action
    (with-outputs-to
     interlude.targets.gen
-    (run odoc markdown-targets -o . %{dep:../interlude.odocl})))
+    (run odoc markdown-targets -o . %{dep:../interlude.odocl} --flat)))
   (enabled_if
    (>= %{ocaml_version} 4.04)))
  (rule
@@ -4565,6 +4601,7 @@
    (run
     odoc
     markdown-generate
+    --flat
     -o
     .
     --extra-suffix
@@ -4616,7 +4653,7 @@
   (action
    (with-outputs-to
     labels.targets.gen
-    (run odoc markdown-targets -o . %{dep:../labels.odocl})))
+    (run odoc markdown-targets -o . %{dep:../labels.odocl} --flat)))
   (enabled_if
    (>= %{ocaml_version} 4.09)))
  (rule
@@ -4781,6 +4818,7 @@
    (run
     odoc
     markdown-generate
+    --flat
     -o
     .
     --extra-suffix
@@ -4818,7 +4856,7 @@
   (action
    (with-outputs-to
     markup.targets.gen
-    (run odoc markdown-targets -o . %{dep:../markup.odocl})))
+    (run odoc markdown-targets -o . %{dep:../markup.odocl} --flat)))
   (enabled_if
    (>= %{ocaml_version} 4.04)))
  (rule
@@ -4955,6 +4993,7 @@
    (run
     odoc
     markdown-generate
+    --flat
     -o
     .
     --extra-suffix
@@ -4978,7 +5017,7 @@
   (action
    (with-outputs-to
     page-mld.targets.gen
-    (run odoc markdown-targets -o . %{dep:../page-mld.odocl})))
+    (run odoc markdown-targets -o . %{dep:../page-mld.odocl} --flat)))
   (enabled_if
    (>= %{ocaml_version} 4.04)))
  (rule
@@ -5286,6 +5325,7 @@
    (run
     odoc
     markdown-generate
+    --flat
     -o
     .
     --extra-suffix
@@ -5421,7 +5461,7 @@
   (action
    (with-outputs-to
     module.targets.gen
-    (run odoc markdown-targets -o . %{dep:../module.odocl})))
+    (run odoc markdown-targets -o . %{dep:../module.odocl} --flat)))
   (enabled_if
    (>= %{ocaml_version} 4.04)))
  (rule
@@ -5662,6 +5702,7 @@
    (run
     odoc
     markdown-generate
+    --flat
     -o
     .
     --extra-suffix
@@ -5757,7 +5798,7 @@
   (action
    (with-outputs-to
     module_type_alias.targets.gen
-    (run odoc markdown-targets -o . %{dep:../module_type_alias.odocl})))
+    (run odoc markdown-targets -o . %{dep:../module_type_alias.odocl} --flat)))
   (enabled_if
    (>= %{ocaml_version} 4.04)))
  (rule
@@ -6034,6 +6075,7 @@
    (run
     odoc
     markdown-generate
+    --flat
     -o
     .
     --extra-suffix
@@ -6121,7 +6163,7 @@
   (action
    (with-outputs-to
     module_type_of.targets.gen
-    (run odoc markdown-targets -o . %{dep:../module_type_of.odocl})))
+    (run odoc markdown-targets -o . %{dep:../module_type_of.odocl} --flat)))
   (enabled_if
    (>= %{ocaml_version} 4.04)))
  (rule
@@ -6686,6 +6728,7 @@
    (run
     odoc
     markdown-generate
+    --flat
     -o
     .
     --extra-suffix
@@ -7016,7 +7059,7 @@
   (action
    (with-outputs-to
     module_type_subst.targets.gen
-    (run odoc markdown-targets -o . %{dep:../module_type_subst.odocl})))
+    (run odoc markdown-targets -o . %{dep:../module_type_subst.odocl} --flat)))
   (enabled_if
    (>= %{ocaml_version} 4.13)))
  (rule
@@ -7276,6 +7319,7 @@
    (run
     odoc
     markdown-generate
+    --flat
     -o
     .
     --extra-suffix
@@ -7348,7 +7392,7 @@
   (action
    (with-outputs-to
     nested.targets.gen
-    (run odoc markdown-targets -o . %{dep:../nested.odocl})))
+    (run odoc markdown-targets -o . %{dep:../nested.odocl} --flat)))
   (enabled_if
    (>= %{ocaml_version} 4.04)))
  (rule
@@ -10194,6 +10238,7 @@
    (run
     odoc
     markdown-generate
+    --flat
     -o
     .
     --extra-suffix
@@ -11666,7 +11711,7 @@
   (action
    (with-outputs-to
     ocamlary.targets.gen
-    (run odoc markdown-targets -o . %{dep:../ocamlary.odocl})))
+    (run odoc markdown-targets -o . %{dep:../ocamlary.odocl} --flat)))
   (enabled_if
    (>= %{ocaml_version} 4.14)))
  (rule
@@ -11912,6 +11957,7 @@
    (run
     odoc
     markdown-generate
+    --flat
     -o
     .
     --extra-suffix
@@ -11993,7 +12039,7 @@
   (action
    (with-outputs-to
     recent.targets.gen
-    (run odoc markdown-targets -o . %{dep:../recent.odocl})))
+    (run odoc markdown-targets -o . %{dep:../recent.odocl} --flat)))
   (enabled_if
    (>= %{ocaml_version} 5.4)))
  (rule
@@ -12264,6 +12310,7 @@
    (run
     odoc
     markdown-generate
+    --flat
     -o
     .
     --extra-suffix
@@ -12345,7 +12392,7 @@
   (action
    (with-outputs-to
     recent_impl.targets.gen
-    (run odoc markdown-targets -o . %{dep:../recent_impl.odocl})))
+    (run odoc markdown-targets -o . %{dep:../recent_impl.odocl} --flat)))
   (enabled_if
    (>= %{ocaml_version} 4.09)))
  (rule
@@ -12482,6 +12529,7 @@
    (run
     odoc
     markdown-generate
+    --flat
     -o
     .
     --extra-suffix
@@ -12505,7 +12553,7 @@
   (action
    (with-outputs-to
     section.targets.gen
-    (run odoc markdown-targets -o . %{dep:../section.odocl})))
+    (run odoc markdown-targets -o . %{dep:../section.odocl} --flat)))
   (enabled_if
    (>= %{ocaml_version} 4.04)))
  (rule
@@ -12681,7 +12729,15 @@
   (targets Stop.md.gen Stop-N.md.gen Stop-O.md.gen Stop-P.md.gen)
   (package odoc)
   (action
-   (run odoc markdown-generate -o . --extra-suffix gen %{dep:../stop.odocl}))
+   (run
+    odoc
+    markdown-generate
+    --flat
+    -o
+    .
+    --extra-suffix
+    gen
+    %{dep:../stop.odocl}))
   (enabled_if
    (>= %{ocaml_version} 4.04)))
  (rule
@@ -12721,7 +12777,7 @@
   (action
    (with-outputs-to
     stop.targets.gen
-    (run odoc markdown-targets -o . %{dep:../stop.odocl})))
+    (run odoc markdown-targets -o . %{dep:../stop.odocl} --flat)))
   (enabled_if
    (>= %{ocaml_version} 4.04)))
  (rule
@@ -12886,6 +12942,7 @@
    (run
     odoc
     markdown-generate
+    --flat
     -o
     .
     --extra-suffix
@@ -12916,7 +12973,13 @@
   (action
    (with-outputs-to
     stop_dead_link_doc.targets.gen
-    (run odoc markdown-targets -o . %{dep:../stop_dead_link_doc.odocl})))
+    (run
+     odoc
+     markdown-targets
+     -o
+     .
+     %{dep:../stop_dead_link_doc.odocl}
+     --flat)))
   (enabled_if
    (>= %{ocaml_version} 4.04)))
  (rule
@@ -13067,6 +13130,7 @@
    (run
     odoc
     markdown-generate
+    --flat
     -o
     .
     --extra-suffix
@@ -13090,7 +13154,13 @@
   (action
    (with-outputs-to
     stop_first_comment.targets.gen
-    (run odoc markdown-targets -o . %{dep:../stop_first_comment.odocl})))
+    (run
+     odoc
+     markdown-targets
+     -o
+     .
+     %{dep:../stop_first_comment.odocl}
+     --flat)))
   (enabled_if
    (>= %{ocaml_version} 4.04)))
  (rule
@@ -13227,6 +13297,7 @@
    (run
     odoc
     markdown-generate
+    --flat
     -o
     .
     --extra-suffix
@@ -13250,7 +13321,7 @@
   (action
    (with-outputs-to
     tag_link.targets.gen
-    (run odoc markdown-targets -o . %{dep:../tag_link.odocl})))
+    (run odoc markdown-targets -o . %{dep:../tag_link.odocl} --flat)))
   (enabled_if
    (>= %{ocaml_version} 4.04)))
  (rule
@@ -13680,6 +13751,7 @@
    (run
     odoc
     markdown-generate
+    --flat
     -o
     .
     --extra-suffix
@@ -13826,7 +13898,7 @@
   (action
    (with-outputs-to
     toplevel_comments.targets.gen
-    (run odoc markdown-targets -o . %{dep:../toplevel_comments.odocl})))
+    (run odoc markdown-targets -o . %{dep:../toplevel_comments.odocl} --flat)))
   (enabled_if
    (>= %{ocaml_version} 4.04)))
  (rule
@@ -13967,7 +14039,15 @@
   (targets Type.md.gen Type-module-type-X.md.gen)
   (package odoc)
   (action
-   (run odoc markdown-generate -o . --extra-suffix gen %{dep:../type.odocl}))
+   (run
+    odoc
+    markdown-generate
+    --flat
+    -o
+    .
+    --extra-suffix
+    gen
+    %{dep:../type.odocl}))
   (enabled_if
    (>= %{ocaml_version} 4.04)))
  (rule
@@ -13993,7 +14073,7 @@
   (action
    (with-outputs-to
     type.targets.gen
-    (run odoc markdown-targets -o . %{dep:../type.odocl})))
+    (run odoc markdown-targets -o . %{dep:../type.odocl} --flat)))
   (enabled_if
    (>= %{ocaml_version} 4.04)))
  (rule
@@ -14127,7 +14207,15 @@
   (targets Val.md.gen)
   (package odoc)
   (action
-   (run odoc markdown-generate -o . --extra-suffix gen %{dep:../val.odocl}))
+   (run
+    odoc
+    markdown-generate
+    --flat
+    -o
+    .
+    --extra-suffix
+    gen
+    %{dep:../val.odocl}))
   (enabled_if
    (>= %{ocaml_version} 4.04)))
  (rule
@@ -14146,7 +14234,7 @@
   (action
    (with-outputs-to
     val.targets.gen
-    (run odoc markdown-targets -o . %{dep:../val.odocl})))
+    (run odoc markdown-targets -o . %{dep:../val.odocl} --flat)))
   (enabled_if
    (>= %{ocaml_version} 4.04)))
  (rule

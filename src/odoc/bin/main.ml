@@ -1315,8 +1315,18 @@ module Odoc_markdown_cmd = Make_renderer (struct
 
   let filepath config url = Odoc_markdown.Generator.filepath ~config url
 
+  let flat =
+    let doc =
+      "Output Markdown files in 'flat' mode, where the hierarchy of modules / \
+       module types / classes and class types are reflected in the filenames \
+       rather than in the directory structure."
+    in
+    Arg.(value & flag & info ~docs ~doc [ "flat" ])
+
   let extra_args =
-    Term.const { Odoc_markdown.Config.root_url = None; allow_html = true }
+    let config flat = Odoc_markdown.Config.make ~root_url:None ~flat () in
+    Term.(const config $ flat)
+
   let renderer = { Odoc_document.Renderer.name = "markdown"; render; filepath }
 end)
 

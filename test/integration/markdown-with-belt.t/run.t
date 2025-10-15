@@ -9,7 +9,7 @@
   $ odoc markdown-generate Belt.odocl -o markdown
   $ odoc markdown-generate Belt_Id.odocl -o markdown
 
-  $ cat markdown/Belt/Belt.md
+  $ cat markdown/Belt/Belt/index.md
   
   # Module `Belt`
   
@@ -85,7 +85,7 @@
   ```
   module Id = Belt_Id
   ```
-  [`Belt.Id`](./Belt_Id.md)
+  [`Belt.Id`](./../Belt_Id/index.md)
   
   Provide utilities to create identified comparators or hashes for data structures used below.
   

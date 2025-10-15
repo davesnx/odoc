@@ -31,11 +31,10 @@ module Path = struct
         let l = String.sub l len (String.length l - len) in
         Some (replacement ^ l)
 
-  let get_dir_and_file ~config:_ url =
+  let get_dir_and_file ~config url =
     let l = Url.Path.to_list url in
     let is_dir =
-      if (* Config.flat config *) true then function
-        | `Page -> `Always | _ -> `Never
+      if Config.flat config then function `Page -> `Always | _ -> `Never
       else function `LeafPage | `File | `SourcePage -> `Never | _ -> `Always
     in
     let dir, file = Url.Path.split ~is_dir l in
